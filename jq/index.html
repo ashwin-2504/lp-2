@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Mobile Login</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- jQuery Mobile JS -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Minimal custom CSS */
+        .ui-content {
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div data-role="page" id="loginPage">
+
+    <!-- Header -->
+    <div data-role="header" data-theme="b">
+        <h1>Admin Portal</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div role="main" class="ui-content">
+        <h3 style="text-align: center;">Sign In</h3>
+        
+        <form id="loginForm">
+            <label for="usrnm">Username:</label>
+            <input type="text" name="username" id="usrnm" placeholder="Enter username" data-clear-btn="true">
+            
+            <label for="pswd">Password:</label>
+            <input type="password" name="password" id="pswd" placeholder="Enter password" data-clear-btn="true">
+            
+            <button type="submit" class="ui-btn ui-btn-b ui-corner-all">Login</button>
+        </form>
+        
+        <div id="message" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
+        
+        <p style="text-align: center;" class="small">Hint: admin / admin</p>
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>© 2026 College Assignment</h4>
+    </div>
+
+</div>
+
+<script>
+    $(document).on('pageinit', '#loginPage', function() {
+        $('#loginForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            const username = $('#usrnm').val();
+            const password = $('#pswd').val();
+            
+            if (username === 'admin' && password === 'admin') {
+                $('#message').css('color', 'green').text('Login successful!');
+                setTimeout(function() {
+                    alert('Welcome back, ' + username);
+                }, 500);
+            } else {
+                $('#message').css('color', 'red').text('Invalid credentials!');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
