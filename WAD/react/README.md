@@ -1,16 +1,16 @@
-# React + Vite
+# React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple project built with React and Vite.
 
-Currently, two official plugins are available:
+## How to Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Open a terminal in this folder (`react`).
+2. Run `npm install` to install dependencies.
+3. Run `npm run dev` to start the development server.
+4. Open the URL shown in the terminal (usually `http://localhost:5173`).
 
-## React Compiler
+## Code Explanation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **`App.jsx`**: Contains a simple login component using React hooks (`useState`).
+- It manages state for username, password, login status, and error messages.
+- It checks for `admin`/`admin` and renders a success message or the login form conditionally.
